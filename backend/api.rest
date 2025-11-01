@@ -1,0 +1,36 @@
+
+
+### status
+get http://localhost:3000
+
+### login
+post http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+    "email":"shahzadkhichi@gmail.com",
+    "password":"mskmsk"
+}
+
+
+
+### register
+post http://localhost:3000/api/auth/register
+Content-Type: application/json
+
+{
+    "email":"shahzadkhichi135@gmail.com",
+    "username":"skkhi",
+    "password":"mskmsk"
+}
+
+
+### 
+get http://localhost:3000/api/book/
+Content-Type: application/json
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MDMzYjU3MWE1ZGE1YTI2NTg0OTU4ZiIsImlhdCI6MTc2MTk5OTkyNCwiZXhwIjoxNzYzMjk1OTI0fQ.zjylVLf4pn9bWTLxO8TVl-RJv9GOYIHjXn8ZTZEaF9g
+
+
+{
+    
+}
