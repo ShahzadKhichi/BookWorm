@@ -1,5 +1,6 @@
 import User from "../models/User.js";
 import jwt from "jsonwebtoken";
+import { connectDB } from "../lib/dbConnect.js";
 
 export const register = async (req, res) => {
   try {

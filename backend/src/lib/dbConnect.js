@@ -1,5 +1,7 @@
 // utils/db.js or lib/dbConnect.js
 import mongoose from "mongoose";
+import dotenv from "dotenv";
+dotenv.config();
 
 const MONGODB_URI = process.env.DB_URL;
 
