@@ -1,10 +1,10 @@
 
 
 ### status
-get http://localhost:3000
+Get https://book-worm-mu-ecru.vercel.app
 
 ### login
-post http://localhost:3000/api/auth/login
+post https://book-worm-mu-ecru.vercel.app/api/auth/login
 Content-Type: application/json
 
 {

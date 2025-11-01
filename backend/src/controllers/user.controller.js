@@ -83,6 +83,8 @@ export const login = async (req, res) => {
       });
     }
 
+    console.log("email and password got: ", email, password);
+
     //check if user  exists
 
     const user = await User.findOne({ email });
@@ -93,6 +95,8 @@ export const login = async (req, res) => {
       });
     }
 
+    console.log("User found");
+
     const compare = await user.comparePassword(password);
     if (!compare) {
       return res.status(404).json({
@@ -100,6 +104,8 @@ export const login = async (req, res) => {
         message: "Invalid email or password",
       });
     }
+
+    console.log(process.env.JWT_SECRET);
 
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
       expiresIn: "15d",
@@ -117,7 +123,7 @@ export const login = async (req, res) => {
       token,
     });
   } catch (error) {
-    console.log("Error in login controller");
+    console.log("Error in login controller", error);
     return res.status(500).json({
       message: "Internel Server error",
       error,
