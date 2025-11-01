@@ -87,7 +87,7 @@ export const login = async (req, res) => {
 
     //check if user  exists
 
-    const user = await User.findOne({ email });
+    const user = await User.find({ email });
     if (!user) {
       return res.status(404).json({
         success: false,
