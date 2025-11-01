@@ -86,8 +86,8 @@ export const login = async (req, res) => {
     console.log("email and password got: ", email, password);
 
     //check if user  exists
-
-    const user = await User.find({ email });
+    await connectDB();
+    const user = await User.findOne({ email });
     if (!user) {
       return res.status(404).json({
         success: false,
@@ -126,7 +126,7 @@ export const login = async (req, res) => {
     console.log("Error in login controller", error);
     return res.status(500).json({
       message: "Internel Server error",
-      error,
+      error: error?.message,
       success: false,
     });
   }
