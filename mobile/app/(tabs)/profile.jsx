@@ -82,11 +82,11 @@ export default function profile() {
 
   const handleDelete = async (id) => {
     try {
-      setDeleteId(id);
-      if (refresh) setRefreshing(true);
+      console.log(id);
 
+      setDeleteId(id);
       const res = await fetch(BASE_URL + "book/" + id, {
-        method: "Delete",
+        method: "DELETE",
         headers: {
           "Content-Type": "application/json",
           Authorization: "Bearer " + token,

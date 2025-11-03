@@ -1,0 +1,51 @@
+{
+  "cli": {
+    "version": ">= 16.26.0"
+  },
+  "build": {
+    "development": {
+      "distribution": "internal",
+      "developmentClient": true,
+      "android": {
+        "buildType": "apk"
+      },
+      "ios": {
+        "simulator": true
+      },
+      "env": {
+        "API_URL": "https://dev.example.com",
+        "OTHER_KEY": "dev_value"
+      }
+    },
+    "preview": {
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk"
+      },
+      "ios": {
+        "simulator": false
+      },
+      "env": {
+        "API_URL": "https://book-worm-mu-ecru.vercel.app/api/",
+        "OTHER_KEY": "preview_value"
+      }
+    },
+    "production": {
+      "distribution": "store",
+      "android": {
+        "buildType": "app-bundle"
+      },
+      "ios": {
+        "simulator": false
+      },
+      "autoIncrement": true,
+      "env": {
+        "API_URL": "https://book-worm-mu-ecru.vercel.app/api/",
+        "OTHER_KEY": "prod_value"
+      }
+    }
+  },
+  "submit": {
+    "production": {}
+  }
+}

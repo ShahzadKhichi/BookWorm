@@ -1,5 +1,5 @@
-import { create } from "zustand";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { create } from "zustand";
 
 import { BASE_URL } from "../constants/api.js";
 export const useAuthStore = create((set) => ({
@@ -8,7 +8,7 @@ export const useAuthStore = create((set) => ({
   isCheckingAuth: true,
 
   isLoading: false,
-  register: async (email, password) => {
+  register: async (username, email, password) => {
     set({ isLoading: true });
     try {
       const res = await fetch(BASE_URL + "auth/register", {
