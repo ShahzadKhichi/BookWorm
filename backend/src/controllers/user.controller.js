@@ -62,7 +62,7 @@ export const register = async (req, res) => {
       token,
     });
   } catch (error) {
-    console.log("");
+    console.log("error in registeration path.", error);
 
     return res.status(500).json({
       message: "Internel Server error",
