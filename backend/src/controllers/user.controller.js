@@ -29,7 +29,7 @@ export const register = async (req, res) => {
     }
 
     //check if user already exists
-
+    await connectDB();
     const alreadyUser = await User.findOne({ $or: [{ email }, { username }] });
     if (alreadyUser) {
       return res.status(400).json({
@@ -40,6 +40,7 @@ export const register = async (req, res) => {
 
     const profileImage = `https://api.dicebear.com/7.x/avataaars/svg?seed=${username}`;
 
+    await connectDB();
     const newUser = await User.create({
       username,
       email,
